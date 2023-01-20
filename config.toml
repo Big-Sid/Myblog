@@ -1,0 +1,3 @@
+baseURL = 'https://Big-Sid.github.io/Myblog/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
