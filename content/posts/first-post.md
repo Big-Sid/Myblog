@@ -12,15 +12,14 @@ This article is divided into three parts, the first part is how I created my web
 ## Create a personal blog on local compuuter
 1, find a convenient location on the local computer to store web files, in this lab, I used Hugo to build my web page, which is a very convenient static web page building tool, because it has a large number of open source web templates, which allows us to quickly deploy a well-designed web page，I chose to create my web files under /Users/Documents/. By using the commands below.
 
-{{< css.inline >}}
-<style>
+```html
 cd /User/Documents/
 hugo new site myblog
 git init
 git submodule add https://github.com/luizdepra/hugo-coder themes/hugo-coder
 cp themes/hugo-codr/exampleSite/* -rf ~/User/Documents/myblog/
-</style>
-{{< /css.inline >}}
+```
 
     If the above steps are successful, these files will appear under that folder：
-![Example image](/static/HCI1-1.png)
+![](/static/images/HCI1-1.png)
+    Now I have done with the page locally! Go through the hugo server command and visit http://localhost:1313/. I can access the site I just created locally!
