@@ -3,4 +3,4 @@ title = "Contact"
 slug = "contact"
 +++
 
-Follow me, @johndoe.
+Contact me: xuefeng.wei@telecom-sudparis.eu
