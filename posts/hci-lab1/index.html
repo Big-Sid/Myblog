@@ -3,17 +3,58 @@
 <label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/Myblog/about/>About</a></li><li class=navigation-item><a class=navigation-link href=/Myblog/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=/Myblog/projects/>Projects</a></li><li class=navigation-item><a class=navigation-link href=/Myblog/contact/>Contact me</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://Big-Sid.github.io/Myblog/posts/hci-lab1/>HCI Lab1 - Create My Personal Webite</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
 <time datetime=2023-01-29T00:00:00Z>January 29, 2023</time></span>
 <span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
-One-minute read</span></div><div class=authors><i class="fa fa-user" aria-hidden=true></i>
-<a href=/Myblog/authors/xuefeng-wei/>Xuefeng Wei</a></div></div></header><div class=post-content><p>This article is divided into three parts, the first part is how I created my website locally, the second part is how I published the website stored locally to the Internet, and the third part is the problems I encountered in the process of creating the web page and how I solved them</p><h2 id=create-a-personal-blog-on-local-compuuter>Create a personal blog on local compuuter
-<a class=heading-link href=#create-a-personal-blog-on-local-compuuter><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><p>1, find a convenient location on the local computer to store web files, in this lab, I used Hugo to build my web page, which is a very convenient static web page building tool, because it has a large number of open source web templates, which allows us to quickly deploy a well-designed web page，I chose to create my web files under /Users/Documents/. By using the commands below.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>cd /User/Documents/
+3-minute read</span></div><div class=authors><i class="fa fa-user" aria-hidden=true></i>
+<a href=/Myblog/authors/xuefeng-wei/>Xuefeng Wei</a></div></div></header><div class=post-content><p>This article is divided into three parts, the first part is how I created my website locally, the second part is how I published the website stored locally to the Internet, and the third part is the problems I encountered in the process of creating the web page and how I solved them</p><h2 id=1-create-a-personal-blog-on-local-compuuter>1. Create a personal blog on local compuuter
+<a class=heading-link href=#1-create-a-personal-blog-on-local-compuuter><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>find a convenient location on the local computer to store web files, in this lab, I used Hugo to build my web page, which is a very convenient static web page building tool, because it has a large number of open source web templates, which allows us to quickly deploy a well-designed web page，I chose to create my web files under /Users/Documents/. By using the commands below.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>cd /User/Documents/
 </span></span><span style=display:flex><span>hugo new site myblog
 </span></span><span style=display:flex><span>git init
 </span></span><span style=display:flex><span>git submodule add https://github.com/luizdepra/hugo-coder themes/hugo-coder
 </span></span><span style=display:flex><span>cp themes/hugo-codr/exampleSite/* -rf ~/User/Documents/myblog/
 </span></span></code></pre></div><pre><code>If the above steps are successful, these files will appear under that folder：
-</code></pre><p><img src=/static/images/HCI1-1.png alt>
-Now I have done with the page locally! Go through the hugo server command and visit http://localhost:1313/. I can access the site I just created locally!</p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
+</code></pre><p><img src=/static/images/hci1_1.png alt></p><pre><code>Now I have done with the page locally! Go through the hugo server command and visit http://localhost:1313/. I can access the site I just created locally!
+</code></pre><h2 id=2-post-blog-on-internet-through-github-pages>2. Post Blog on Internet through Github Pages
+<a class=heading-link href=#2-post-blog-on-internet-through-github-pages><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Now we&rsquo;re going to publish the page we just created to the Internet via github,First I create a hidden folder .github in my personal web local directory and create a folder in the hidden folder and name it workflows and then create a folder named gh-pages.yml under that folder. In Mac OS, the shortcut to show hidden folders is :</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>shift+command+.
+</span></span></code></pre></div><p>Then write the following in the gh-pages.yml file you just created, which is the key to driving github pages.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>name: github pages
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>on:
+</span></span><span style=display:flex><span>  push:
+</span></span><span style=display:flex><span>    branches:
+</span></span><span style=display:flex><span>      - main  # Set a branch that will trigger a deployment
+</span></span><span style=display:flex><span>  pull_request:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>jobs:
+</span></span><span style=display:flex><span>  deploy:
+</span></span><span style=display:flex><span>    runs-on: ubuntu-22.04
+</span></span><span style=display:flex><span>    steps:
+</span></span><span style=display:flex><span>      - uses: actions/checkout@v3
+</span></span><span style=display:flex><span>        with:
+</span></span><span style=display:flex><span>          submodules: true  # Fetch Hugo themes (true OR recursive)
+</span></span><span style=display:flex><span>          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - name: Setup Hugo
+</span></span><span style=display:flex><span>        uses: peaceiris/actions-hugo@v2
+</span></span><span style=display:flex><span>        with:
+</span></span><span style=display:flex><span>          hugo-version: &#39;latest&#39;
+</span></span><span style=display:flex><span>          # extended: true
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - name: Build
+</span></span><span style=display:flex><span>        run: hugo --minify
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - name: Deploy
+</span></span><span style=display:flex><span>        uses: peaceiris/actions-gh-pages@v3
+</span></span><span style=display:flex><span>        if: github.ref == &#39;refs/heads/main&#39;
+</span></span><span style=display:flex><span>        with:
+</span></span><span style=display:flex><span>          github_token: ${{ secrets.GITHUB_TOKEN }}
+</span></span><span style=display:flex><span>          publish_dir: ./public
+</span></span></code></pre></div><p>Once you&rsquo;re done, go to your own github and create a repo, then return to your local terminal and enter the following command：</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>git status
+</span></span><span style=display:flex><span>git add .
+</span></span><span style=display:flex><span>git commit -m &#34;first commit&#34;
+</span></span><span style=display:flex><span>git branch -M main
+</span></span><span style=display:flex><span>git remote add origin [your github repo&#39;s address]
+</span></span><span style=display:flex><span>git push -u origin main
+</span></span></code></pre></div><p>After success, go to the general option of actions in github and select gh-pages, then you can access my blog in the Internet!</p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
 2019 -
 2023
 Xuefeng WEI
