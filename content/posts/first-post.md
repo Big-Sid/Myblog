@@ -22,7 +22,7 @@ cp themes/hugo-codr/exampleSite/* -rf ~/User/Documents/myblog/
 
     If the above steps are successful, these files will appear under that folder：
     
-![](/static/images/hci1_1.png)
+![](/images/hci1_1.png)
 
     Now I have done with the page locally! Go through the hugo server command and visit http://localhost:1313/. I can access the site I just created locally!
 
