@@ -22,7 +22,7 @@ cp themes/hugo-codr/exampleSite/* -rf ~/User/Documents/myblog/
 
     If the above steps are successful, these files will appear under that folder：
     
-![](/images/hci1_1.png)
+![](/images/avatar.jpg)
 
     Now I have done with the page locally! Go through the hugo server command and visit http://localhost:1313/. I can access the site I just created locally!
 
@@ -82,3 +82,9 @@ git push -u origin main
 ```
 
 After success, go to the general option of actions in github and select gh-pages, then you can access my blog in the Internet!
+
+## 3. Problem I met durng this lab 
+This lab was a challenge for me because I had never created a web page before, and the most error-prone thing was that I created the site in the wrong place locally so that I couldn't access it easily, and when I got familiar with it I fixed the page where I created the web page.
+The second problem was that during the deployment of the web page, when I accessed my web page, the page was displayed incorrectly because I used the wrong command during the creation of the web page, and the wrong order also caused the web page creation to fail.
+The third problem is that when I put the pages on giithub, I need to change the pages to gh-pages in actions-general, only then the site will be effective.
+In short, as long as the steps are followed carefully, there will be no problem.
