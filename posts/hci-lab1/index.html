@@ -12,7 +12,7 @@
 </span></span><span style=display:flex><span>git submodule add https://github.com/luizdepra/hugo-coder themes/hugo-coder
 </span></span><span style=display:flex><span>cp themes/hugo-codr/exampleSite/* -rf ~/User/Documents/myblog/
 </span></span></code></pre></div><pre><code>If the above steps are successful, these files will appear under that folder：
-</code></pre><p><img src=/images/hci1_1.png alt></p><pre><code>Now I have done with the page locally! Go through the hugo server command and visit http://localhost:1313/. I can access the site I just created locally!
+</code></pre><p><img src=/images/avatar.jpg alt></p><pre><code>Now I have done with the page locally! Go through the hugo server command and visit http://localhost:1313/. I can access the site I just created locally!
 </code></pre><h2 id=2-post-blog-on-internet-through-github-pages>2. Post Blog on Internet through Github Pages
 <a class=heading-link href=#2-post-blog-on-internet-through-github-pages><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>Now we&rsquo;re going to publish the page we just created to the Internet via github,First I create a hidden folder .github in my personal web local directory and create a folder in the hidden folder and name it workflows and then create a folder named gh-pages.yml under that folder. In Mac OS, the shortcut to show hidden folders is :</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>shift+command+.
@@ -54,7 +54,12 @@
 </span></span><span style=display:flex><span>git branch -M main
 </span></span><span style=display:flex><span>git remote add origin [your github repo&#39;s address]
 </span></span><span style=display:flex><span>git push -u origin main
-</span></span></code></pre></div><p>After success, go to the general option of actions in github and select gh-pages, then you can access my blog in the Internet!</p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
+</span></span></code></pre></div><p>After success, go to the general option of actions in github and select gh-pages, then you can access my blog in the Internet!</p><h2 id=3-problem-i-met-durng-this-lab>3. Problem I met durng this lab
+<a class=heading-link href=#3-problem-i-met-durng-this-lab><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>This lab was a challenge for me because I had never created a web page before, and the most error-prone thing was that I created the site in the wrong place locally so that I couldn&rsquo;t access it easily, and when I got familiar with it I fixed the page where I created the web page.
+The second problem was that during the deployment of the web page, when I accessed my web page, the page was displayed incorrectly because I used the wrong command during the creation of the web page, and the wrong order also caused the web page creation to fail.
+The third problem is that when I put the pages on giithub, I need to change the pages to gh-pages in actions-general, only then the site will be effective.
+In short, as long as the steps are followed carefully, there will be no problem.</p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
 2019 -
 2023
 Xuefeng WEI
