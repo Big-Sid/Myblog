@@ -1,12 +1,8 @@
 +++ 
-draft = true
-date = 2023-01-29T23:23:21+01:00
-title = ""
-description = ""
-slug = ""
-authors = []
-tags = []
-categories = []
-externalLink = ""
-series = []
+date = "2023-01-29"
+title = "First post"
+description = "My first post!"
+authors = "Xuefeng Wei"
 +++
+
+first blog!
