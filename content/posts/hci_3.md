@@ -1,6 +1,6 @@
 +++ 
 date = "2023-01-29"
-title = "HCI Lab1 - Deploy The Unity Game on Phone"
+title = "HCI Lab3 - Deploy The Unity Game on Phone"
 description = "This is about how I deeploy the unity gamee on phone and the questions that arose during my creation process"
 authors = "Xuefeng Wei"
 slug = "HCI Lab3"
