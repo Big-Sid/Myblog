@@ -3,8 +3,45 @@
 <label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/Myblog/about/>About</a></li><li class=navigation-item><a class=navigation-link href=/Myblog/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=/Myblog/projects/>Projects</a></li><li class=navigation-item><a class=navigation-link href=/Myblog/contact/>Contact me</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://Big-Sid.github.io/Myblog/posts/hci-lab2/>HCI Lab2 - Roll Ball Game</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
 <time datetime=2023-01-29T00:00:00Z>January 29, 2023</time></span>
 <span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
-0-minute read</span></div><div class=authors><i class="fa fa-user" aria-hidden=true></i>
-<a href=/Myblog/authors/xuefeng-wei/>Xuefeng Wei</a></div></div></header><div class=post-content></div><footer></footer></article></section></div><footer class=footer><section class=container>©
+2-minute read</span></div><div class=authors><i class="fa fa-user" aria-hidden=true></i>
+<a href=/Myblog/authors/xuefeng-wei/>Xuefeng Wei</a></div></div></header><div class=post-content><p>In this one lab, I mainly developed a simple unity game, by controlling the ball collision objects to achieve the role of the destruction of objects, this part is divided into two parts, the first part for how I created this game, the second part is I encountered some problems</p><h2 id=1-create-the-game>1. Create the Game
+<a class=heading-link href=#1-create-the-game><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>First I created a sphere to be the player, then a plane to be the ground, and four cubes to be the walls, and then created different materials for them to be their colors,Also, on the playfield I created 12 small cubes as game objects, and in groups of 6, each group is a different color, the final scene is shown below:</p><p><img src=https://s2.loli.net/2023/01/30/BlnSfXjC7FY912m.png alt=hci2-1.png></p><p>The next step is to control the player object by scripts and make the small square rotate</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>public class PlayerController : MonoBehaviour
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    public float speed = 0;
+</span></span><span style=display:flex><span>    private Rigidbody rb;
+</span></span><span style=display:flex><span>    private float movementX;
+</span></span><span style=display:flex><span>    private float movementY;
+</span></span><span style=display:flex><span>    // Start is called before the first frame update
+</span></span><span style=display:flex><span>    void Start()
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        rb = GetComponent&lt;<span style=font-weight:700>Rigidbody</span>&gt;();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    private void OnMove(InputValue movementValue)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        Vector2 movementVector = movementValue.Get&lt;<span style=font-weight:700>Vector2</span>&gt;();
+</span></span><span style=display:flex><span>        movementX = movementVector.x;
+</span></span><span style=display:flex><span>        movementY = movementVector.y;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    private void FixedUpdate()
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        Vector3 movement = new Vector3(movementX, 0.0f,movementY);
+</span></span><span style=display:flex><span>        rb.AddForce(movement * speed);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    private void OnTriggerEnter(Collider other)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        if ((other.gameObject.CompareTag(&#34;Pickuporange&#34;)) || (other.gameObject.CompareTag(&#34;Pickupgreen&#34;)))
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            other.gameObject.SetActive(false);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span></code></pre></div><p>Above is the script for controlling objects and colliding with them to make them disappear
+Here is a video demonstrating this simple game：
+<a href="https://www.youtube.com/watch?v=lYDTS4OFwVY&feature=youtu.be">https://www.youtube.com/watch?v=lYDTS4OFwVY&feature=youtu.be</a></p><p>##2. Problem I met durng this lab
+In this lab, I encountered fewer problems, mainly focused on scripting, especially in the part of controlling objects, because the first contact with C# language led to more errors.</p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
 2019 -
 2023
 Xuefeng WEI
